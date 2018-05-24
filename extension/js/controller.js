@@ -29,35 +29,13 @@ SYMPHONY.remote.hello().then(function (data) {
 
         salesDemoControllerService.implement({
             trigger: function(uiClass, id, payload, data) {
-                if (uiClass === 'single-user-im') {
-                    let parentDomNodesWithProfileInfo =  parent.document.getElementsByClassName('has-profile');
-                    let userId = parentDomNodesWithProfileInfo[0].dataset.userid;
-                    findUserById(userId).then(userInfo => {
-                        let userFullName = `${userInfo.firstName} ${userInfo.lastName}`
-                        var payload = {
-                            entity: 'person',
-                            value: userFullName
-                        }
-                        fin.desktop.InterApplicationBus.send('Sales-Demo-Linker', 'context', payload);
-                        console.log(`Full Name = ${userFullName}`);
-                    });
-                } else if(uiClass === 'hashtag') {
-                    let hashtagValue = payload.entity.name.slice(1);
-                    var payload = {
-                        entity: 'order',
-                        value: {
-                            orderId: hashtagValue
-                        }
-                    }
-                    fin.desktop.InterApplicationBus.send('Sales-Demo-Linker', 'context', payload);
-                    console.log(`The value of the hashtage is ${hashtagValue}`);
-                } else if(uiClass === 'cashtag') {
+                if(uiClass === 'cashtag') {
                     let cashtagValue = payload.entity.name.slice(1);
                     var payload = {
                         entity: 'ticker',
                         value: cashtagValue
                     }
-                    fin.desktop.InterApplicationBus.send('Sales-Demo-Linker', 'context', payload);
+                    fin.desktop.InterApplicationBus.publish('ticker-updated', payload);
                     console.log(`The value of the cashtage is ${cashtagValue}`);
                 }
             }
