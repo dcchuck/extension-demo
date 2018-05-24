@@ -3,8 +3,8 @@
       {
         "type": "sandbox",
         "id": "sales-demo",
-        "name": "Sales Demo",
-        "blurb": "This app enables interop in our sales demo",
+        "name": "Interop Demo",
+        "blurb": "This app enables interop",
         "publisher": "OpenFin",
         "url": "https://dcchuck.github.io/extension-demo/extension/controller.html",
         "domain": "dcchuck.github.io"
