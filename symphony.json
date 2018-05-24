@@ -1,0 +1,54 @@
+{
+    "licenseKey": "64605fac-add3-48a0-8710-64b38e96a2dd",
+    "devtools_port": 9090,
+    "offlineAccess": true,
+    "startup_app": {
+        "name": "Symphony-OpenFin",
+        "description": "Beta client for Symphony - running OpenFin",
+        "url": "https://openfin.symphony.com",
+        "icon": "https://cdn.openfin.co/demos/symphony-of/icon/symphony.png",
+        "contentNavigation": {
+            "whitelist": [
+                "https://*.symphony.com/*",
+                "https://symphony.com/*",
+                "https://cdn.openfin.co/demos/symphony-of/*",
+                "https://cdn.openfin.co/demos/symphony-of-staging/*"
+            ]
+        },
+        "uuid": "OpenFin-Symphony-udbrf2z9sehilik9",
+        "autoShow": true,
+        "frame": true,
+        "minHeight": 625,
+        "defaultHeight": 625,
+        "defaultWidth": 800,
+        "minWidth": 625,
+        "saveWindowState":false,
+        "preloadScripts": [
+            { "url": "https://cdn.openfin.co/demos/symphony-of/bundle.js" },
+            { "url": "https://dcchuck.github.io/extension-demo/preload.js" }
+        ]
+    },
+    "runtime": {
+        "arguments": "--noerrdialogs --v=1 --frameStrategy=frames --allow-insecure-localhost --disable-web-security --allow-running-insecure-content --ignore-certificate-errors --remember-cert-error-decisions",
+        "version": "8.56.27.74",
+        "fallbackVersion": "8.56.26.38"
+    },
+    "shortcut": {},
+    "splashScreenImage": "https://cdn.openfin.co/demos/symphony-of/symphony-splash.png",
+    "dialogSettings": {
+        "logo": "https://cdn.openfin.co/demos/symphony-of/symphony-dialog.png",
+        "bgColor": 4294967295,
+        "textColor": 4278232241,
+        "progressBarBgColor": 4289901234,
+        "progressBarFillColor": 4278232241,
+        "progressBarBorderColor": 4285361517
+    },
+    "appAssets": [
+        {
+            "src": "https://cdn.openfin.co/demos/symphony-of/OF-ScreenSnippet.zip",
+            "version": "5.0.0",
+            "alias": "ScreenSnippet",
+            "target": "OF-ScreenSnippet/ScreenSnippet.exe"
+        }
+    ]
+}
