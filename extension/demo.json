@@ -7,7 +7,7 @@
         "blurb": "This app enables interop in our sales demo",
         "publisher": "OpenFin",
         "url": "https://dcchuck.github.io/extension-demo/extension/controller.html",
-        "domain": "localhost"
+        "domain": "dcchuck.github.io"
       }
     ]
   }
