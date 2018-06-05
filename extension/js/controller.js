@@ -42,7 +42,7 @@ SYMPHONY.remote.hello().then(function (data) {
                     findUserById(userId).then(userInfo => {
                         let userName = `${userInfo.username}`
                         fin.desktop.InterApplicationBus.publish('onephonebook', userName);
-                        console.log(`Published `${userName}`);
+                        console.log(`Published ${userName}`);
                     });
                 }
             }
