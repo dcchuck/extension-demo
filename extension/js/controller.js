@@ -24,6 +24,7 @@ SYMPHONY.remote.hello().then(function (data) {
         const uiService = SYMPHONY.services.subscribe('ui');
 
         uiService.registerExtension('cashtag', 'sales-demo-cashtag', 'sales-demo:controller', {label: 'Send Ticker'});
+        uiService.registerExtension('single-user-im', 'sales-demo-im', 'sales-demo:controller', {label: 'People Finder'});
 
         salesDemoControllerService.implement({
             trigger: function(uiClass, id, payload, data) {
@@ -35,6 +36,14 @@ SYMPHONY.remote.hello().then(function (data) {
                     }
                     fin.desktop.InterApplicationBus.publish('ticker-updated', payload);
                     console.log(`The value of the cashtage is ${cashtagValue}`);
+                } else if(uiClass === 'single-user-im') {
+                    let parentDomNodesWithProfileInfo =  parent.document.getElementsByClassName('has-profile');
+                    let userId = parentDomNodesWithProfileInfo[0].dataset.userid;
+                    findUserById(userId).then(userInfo => {
+                        let userName = `${userInfo.username}`
+                        fin.desktop.InterApplicationBus.publish('onephonebook', userName);
+                        console.log(`Published `${userName}`);
+                    });
                 }
             }
         });
