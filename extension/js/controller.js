@@ -49,7 +49,7 @@ SYMPHONY.remote.hello().then(function (data) {
         });
         // TODO - use parent app implementation (See above) - we will need to be retrieving the pod URL in the parent version to do so
         function findUserById(userId) {
-            return window.httpGet(`https://openfin.symphony.com/pod/v2/user/?uid=${userId}`);
+            return window.httpGet(`https://barclays.symphony.com/pod/v2/user/?uid=${userId}`);
         }
     }.bind(this));
 }.bind(this));
