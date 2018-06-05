@@ -24,7 +24,7 @@ SYMPHONY.remote.hello().then(function (data) {
         const uiService = SYMPHONY.services.subscribe('ui');
 
         uiService.registerExtension('cashtag', 'sales-demo-cashtag', 'sales-demo:controller', {label: 'Send Ticker'});
-        uiService.registerExtension('single-user-im', 'sales-demo-im', 'sales-demo:controller', {label: 'People Finder'});
+        uiService.registerExtension('single-user-im', 'sales-demo-im', 'sales-demo:controller', {label: 'Phonebook'});
 
         salesDemoControllerService.implement({
             trigger: function(uiClass, id, payload, data) {
